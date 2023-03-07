@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  
+  <!-- 결국 관계로 이어진것 같으니 디지몬도 갖고오깅 -->
+  <!-- 단순하게 사진과 이름만 가져와 보기 -->
+  <!-- 강사님이 클래스룸에 올려준 클릭이벤트마다 생성되게 하는 걸 응용해도 좋을 듯
+  데이터는 갖고오고 클릭하면 하나씩 추가해서 쭉 나열되게? 는 미관상 맘에 안드는뎅
+일단 갖고오기. -->
+  <script>
+    function CreateDoc(Tag, Parents, attri, attriValue) {
+      const element = document.createElement(Tag)
+      Parents.appendChild(element);
+      if (attri !== undefined) {
+        element.setAttribute(attri, attriValue)
+      }
+    }
+
+    document.body.style.cssText="width:100vw; height:100vh"
+
+    CreateDoc("div", document.body)
+    document.body.children[1].style.csstext = "width:100%;height:100%;"
+
+    CreateDoc("div",document.body.children[1])
+    const Div = document.body.children[1].children[0];
+    Div.style.csstext = "width:100%; height:100%;"
+
+  </script>
 </body>
+
 </html>
